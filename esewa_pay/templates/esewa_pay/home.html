@@ -1,0 +1,19 @@
+home page<br>
+<h1>Select picture to pay with ESEWA PAY</h1>
+
+<br>
+
+<div class="container">
+
+<div class="row">
+    {% for p in product %}
+    <div class="col-lg-3" >
+        <h4>{{p.product_name}}</h4>
+       <a href='{% url "esewapay" id=p.id %}'><img src='{{p.product_img.url}}'  width="20%"></img></a>
+        <p>Payment Completed : {{p.Payment_completed}}</p>
+    </div>
+</div>
+{% endfor %}
+</div>
+
+<!-- return redirect('/esewapay/?o_id='+oid)  -->
